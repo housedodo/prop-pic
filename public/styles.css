@@ -144,3 +144,5 @@ button.link {
   cursor: zoom-out;
 }
 .lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; }
+
+.version { text-align: center; color: var(--muted); font-size: 0.75rem; padding: 0 16px 24px; }
