@@ -285,7 +285,7 @@ function leaderboard(game, me) {
 }
 
 function othersForSlot(game, i) {
-  const rows = game.others.filter((o) => o.scores?.[i] != null);
+  const rows = (game.others ?? []).filter((o) => o.scores?.[i] != null);
   if (!rows.length) return '';
   return `<div class="others">${rows
     .map((o) => {
