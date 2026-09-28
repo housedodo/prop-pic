@@ -2,7 +2,7 @@
 
 export const SCORING = {
   // Photos with less than this share of the color score nothing.
-  minCoverage: 0.05,
+  minCoverage: 0.03,
   // Points for how much of the photo is the color; maxes out at `coverageFullAt`.
   coveragePoints: 60,
   coverageFullAt: 0.5,

@@ -58,7 +58,7 @@ Per photo, max 100 + bonuses:
 - **Coverage** (up to 60): share of the photo that is the color; maxes out at 50%.
 - **Accuracy** (up to 40): how good an example of the color those pixels are (hue near the ideal, vivid).
 - **Bonus** (+25 each): a bonus item detected with at least 12% of its box in the color.
-- Photos with under 5% of the color score 0.
+- Photos with under 3% of the color score 0 (the app says so and suggests getting closer).
 
 ### Limits
 

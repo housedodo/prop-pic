@@ -349,7 +349,8 @@ function renderGame(id) {
                      <span>Bonus <b>${taken.score.bonus}</b></span>
                      <button class="link" data-toggle-mask="${i}">${showMask.has(i) ? 'Show photo' : 'Show what counted'}</button>
                    </div>
-                   <div class="muted small">${Math.round(taken.coverage * 100)}% of the photo is ${slot.color.name.toLowerCase()}${taken.detectionAvailable ? '' : ' · bonus detection unavailable'}</div>`
+                   <div class="muted small">${Math.round(taken.coverage * 100)}% of the photo is ${slot.color.name.toLowerCase()}${taken.detectionAvailable ? '' : ' · bonus detection unavailable'}</div>
+                   ${taken.coverage < SCORING.minCoverage ? `<div class="hint">A photo needs at least ${Math.round(SCORING.minCoverage * 100)}% ${slot.color.name.toLowerCase()} to score. Get closer so the color fills more of the frame, then tap Retake.</div>` : ''}`
                 : ''
             }
             ${othersForSlot(game, i)}

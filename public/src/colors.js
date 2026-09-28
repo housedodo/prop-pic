@@ -9,8 +9,8 @@
 // blue all count as Blue; tan and beige count as nothing).
 export const PALETTE = [
   { name: 'Red', hex: '#d62828', match: { hue: [355, 42, 27], minC: 0.1, minL: 0.28, maxL: 0.8 } },
-  { name: 'Orange', hex: '#f77f00', match: { hue: [42, 78, 58], minC: 0.11, minL: 0.6, maxL: 0.95 } },
-  { name: 'Yellow', hex: '#ffd000', match: { hue: [78, 118, 100], minC: 0.09, minL: 0.66, maxL: 1 } },
+  { name: 'Orange', hex: '#f77f00', match: { hue: [38, 78, 58], minC: 0.07, minL: 0.6, maxL: 0.95 } },
+  { name: 'Yellow', hex: '#ffd000', match: { hue: [78, 118, 100], minC: 0.06, minL: 0.66, maxL: 1 } },
   { name: 'Green', hex: '#2a9d38', match: { hue: [106, 178, 142], minC: 0.05, minL: 0.22, maxL: 0.95 } },
   { name: 'Teal', hex: '#14a3a3', match: { hue: [178, 222, 192], minC: 0.05, minL: 0.3, maxL: 0.92 } },
   { name: 'Blue', hex: '#1e78c8', match: { hue: [222, 292, 262], minC: 0.05, minL: 0.18, maxL: 0.92 } },

@@ -146,3 +146,4 @@ button.link {
 .lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; }
 
 .version { text-align: center; color: var(--muted); font-size: 0.75rem; padding: 0 16px 24px; }
+.hint { margin-top: 8px; padding: 8px 10px; border-radius: 10px; background: var(--bg); font-size: 0.85rem; }

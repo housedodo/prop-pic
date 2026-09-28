@@ -37,6 +37,8 @@ test('real-world shades are named like people name them', () => {
     '#800000': 'Red', // maroon
     '#dc143c': 'Red', // crimson
     '#ed9121': 'Orange', // carrot
+    '#cd8f76': 'Orange', // faded orange print, indoor phone photo
+    '#e4a286': 'Orange', // same, lighter
     '#e1ad01': 'Yellow', // mustard
     '#4f7942': 'Green', // leaf
     '#40e0d0': 'Teal', // turquoise
