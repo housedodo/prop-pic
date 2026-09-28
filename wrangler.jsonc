@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "prop-pic",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "CHALLENGES", "class_name": "ChallengeRoom" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ChallengeRoom"] }]
+}

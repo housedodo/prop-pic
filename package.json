@@ -3,7 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "npx --yes serve -l 5173 .",
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy",
     "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.142.0"
   }
 }
