@@ -12,6 +12,9 @@
 // public player id is a hash of it, so others can see your id but can't post as you.
 
 import { DurableObject } from 'cloudflare:workers';
+import { handleQuest } from './quest.js';
+
+export { QuestBudget } from './quest.js';
 
 const MAX_PLAYERS = 8;
 const SLOTS = 4;
@@ -30,6 +33,7 @@ export default {
     const url = new URL(request.url);
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(request);
     if (url.pathname === '/api/health') return json({ ok: true });
+    if (url.pathname.startsWith('/api/quest/')) return handleQuest(request, env, url.pathname.slice('/api/quest'.length));
 
     const m = url.pathname.match(/^\/api\/challenges\/([^/]+)(\/.*)?$/);
     if (!m) return json({ error: 'Not found' }, 404);

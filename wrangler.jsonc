@@ -8,7 +8,13 @@
     "binding": "ASSETS"
   },
   "durable_objects": {
-    "bindings": [{ "name": "CHALLENGES", "class_name": "ChallengeRoom" }]
+    "bindings": [
+      { "name": "CHALLENGES", "class_name": "ChallengeRoom" },
+      { "name": "QUEST_BUDGET", "class_name": "QuestBudget" }
+    ]
   },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ChallengeRoom"] }]
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["ChallengeRoom"] },
+    { "tag": "v2", "new_sqlite_classes": ["QuestBudget"] }
+  ]
 }

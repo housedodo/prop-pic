@@ -6,6 +6,24 @@ A small photo game: you get a color, go find it, photograph it, and score points
 - **Challenge a friend**: you both get the same 4 colors for the day. Take 4 photos before midnight; highest total wins.
 - **Bonus items**: each color comes with 2 bonus objects (e.g. "cup", "umbrella"). If the photo contains that object *in that color*, you get extra points. Objects are recognised on-device with TensorFlow.js COCO-SSD.
 
+## Daily Quest (text adventure)
+
+A second game lives at **`/quest/`**: a short fantasy adventure in D&D style.
+
+- Create a hero (Fighter, Rogue, Wizard or Bard), each strong in a different ability.
+- **3 actions per day.** Type what you do in a few words; the game master picks the ability check
+  (Strength, Dexterity, Intelligence, Charisma) and its difficulty (DC); you roll a d20 + your bonus.
+- **Every roll has three possible outcomes:** success, success at a cost (within 4 of the DC), or
+  failure. A natural 20 always succeeds, a natural 1 always fails.
+- HP, gold, XP (level up every 100) and items carry over. At 0 HP you're knocked out until tomorrow.
+
+The game master is **Claude** (`claude-opus-5-5`, low effort, structured JSON output) via
+`worker/quest.js`. To turn it on, add your Anthropic API key as a secret in Cloudflare:
+**Workers & Pages → prop-pic → Settings → Variables and Secrets → Add → Secret**, name
+`ANTHROPIC_API_KEY`. Without a key, or once the daily budget is used (300 calls a day overall,
+60 per player), the page uses a simpler built-in game master (`public/quest/gm-offline.js`).
+A day of play is about 7 calls.
+
 ## Put it online with Cloudflare (live multiplayer)
 
 Hosted on Cloudflare, challenges sync live: everyone in a challenge sees each
@@ -43,6 +61,8 @@ after each photo.
 | `public/src/store.js` | Saves games on the device; builds/reads invite links. |
 | `public/src/app.js` | UI. |
 | `worker/index.js` | Cloudflare Worker: serves `public/` and the API. One Durable Object per challenge stores players, scores and photos. |
+| `worker/quest.js` | Daily Quest's AI game master (Claude) and its daily call budget. |
+| `public/quest/` | Daily Quest page, rules (`rules.js`) and the built-in game master. |
 
 ### Color recognition
 
